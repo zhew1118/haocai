@@ -7,5 +7,5 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/haocai
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
