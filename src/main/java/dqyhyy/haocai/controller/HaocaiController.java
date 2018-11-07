@@ -1,5 +1,7 @@
-package dqyhyy.haocai;
+package dqyhyy.haocai.controller;
 
+import dqyhyy.haocai.domain.Haocai;
+import dqyhyy.haocai.repository.HaocaiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
