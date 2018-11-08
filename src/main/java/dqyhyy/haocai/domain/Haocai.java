@@ -8,81 +8,92 @@ import javax.persistence.Id;
 public class Haocai {
     @Id
     @GeneratedValue
-    private Integer id;
+    private Integer haocaiId;
 
-    private String name;
+    /** 耗材名称 */
+    private String haocaiName;
 
-    private String purchaseDate;
+    /** 耗材购买时间 */
+    private String haocaiPurchaseDate;
 
-    private String expirationDate;
+    /** 耗材有效期 */
+    private String haocaiExpirationDate;
 
-    private String spec;
+    /** 耗材规格 */
+    private String haocaiSpec;
 
-    private String vendor;
+    /** 耗材供应商 */
+    private String haocaiVendor;
 
-    private String type;
+    /** 耗材种类 */
+    private String haocaiType;
 
+    /** 耗材库存余量 */
     private int amount;
 
-    private String unit;
+    /** 耗材库存单位 */
+    private String haocaiUnit;
+
+    /** 耗材状态 0正常 1下架 */
+    private Integer haocaiStatus;
 
     public Haocai() {
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getHaocaiId() {
+        return haocaiId;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setHaocaiId(Integer haocaiId) {
+        this.haocaiId = haocaiId;
     }
 
-    public String getName() {
-        return name;
+    public String getHaocaiName() {
+        return haocaiName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setHaocaiName(String haocaiName) {
+        this.haocaiName = haocaiName;
     }
 
-    public String getPurchaseDate() {
-        return purchaseDate;
+    public String getHaocaiPurchaseDate() {
+        return haocaiPurchaseDate;
     }
 
-    public void setPurchaseDate(String purchaseDate) {
-        this.purchaseDate = purchaseDate;
+    public void setHaocaiPurchaseDate(String haocaiPurchaseDate) {
+        this.haocaiPurchaseDate = haocaiPurchaseDate;
     }
 
-    public String getExpirationDate() {
-        return expirationDate;
+    public String getHaocaiExpirationDate() {
+        return haocaiExpirationDate;
     }
 
-    public void setExpirationDate(String expirationDate) {
-        this.expirationDate = expirationDate;
+    public void setHaocaiExpirationDate(String haocaiExpirationDate) {
+        this.haocaiExpirationDate = haocaiExpirationDate;
     }
 
-    public String getSpec() {
-        return spec;
+    public String getHaocaiSpec() {
+        return haocaiSpec;
     }
 
-    public void setSpec(String spec) {
-        this.spec = spec;
+    public void setHaocaiSpec(String haocaiSpec) {
+        this.haocaiSpec = haocaiSpec;
     }
 
-    public String getVendor() {
-        return vendor;
+    public String getHaocaiVendor() {
+        return haocaiVendor;
     }
 
-    public void setVendor(String vendor) {
-        this.vendor = vendor;
+    public void setHaocaiVendor(String haocaiVendor) {
+        this.haocaiVendor = haocaiVendor;
     }
 
-    public String getType() {
-        return type;
+    public String getHaocaiType() {
+        return haocaiType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setHaocaiType(String haocaiType) {
+        this.haocaiType = haocaiType;
     }
 
     public int getAmount() {
@@ -93,11 +104,19 @@ public class Haocai {
         this.amount = amount;
     }
 
-    public String getUnit() {
-        return unit;
+    public String getHaocaiUnit() {
+        return haocaiUnit;
     }
 
-    public void setUnit(String unit) {
-        this.unit = unit;
+    public void setHaocaiUnit(String haocaiUnit) {
+        this.haocaiUnit = haocaiUnit;
+    }
+
+    public Integer getHaocaiStatus() {
+        return haocaiStatus;
+    }
+
+    public void setHaocaiStatus(Integer haocaiStatus) {
+        this.haocaiStatus = haocaiStatus;
     }
 }
