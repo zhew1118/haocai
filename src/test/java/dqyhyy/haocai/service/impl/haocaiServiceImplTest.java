@@ -39,6 +39,11 @@ public class haocaiServiceImplTest {
 
     @Test
     public void save() {
+        Haocai haocai = new Haocai();
+        haocai.setHaocaiName("针筒");
+        haocai.setAmount(2000);
 
+        Haocai result = haocaiService.save(haocai);
+        Assert.assertNotNull(result);
     }
 }
