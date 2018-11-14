@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/admin/haocai")
+@RequestMapping("/admin")
 public class HaocaiBackendController {
 
     @Autowired
@@ -29,6 +29,6 @@ public class HaocaiBackendController {
         map.put("haocaiPage", haocaiPage);
         map.put("currentPage", page);
         map.put("size", size);
-        return new ModelAndView("haocai/list", map);
+        return new ModelAndView("admin/list", map);
     }
 }
