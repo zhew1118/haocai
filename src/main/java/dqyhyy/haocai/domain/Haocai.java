@@ -30,7 +30,7 @@ public class Haocai {
     private String haocaiType;
 
     /** 耗材库存余量 */
-    private int amount;
+    private int haocaiAmount;
 
     /** 耗材库存单位 */
     private String haocaiUnit;
@@ -97,12 +97,12 @@ public class Haocai {
         this.haocaiType = haocaiType;
     }
 
-    public int getAmount() {
-        return amount;
+    public int getHaocaiAmount() {
+        return haocaiAmount;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setHaocaiAmount(int haocaiAmount) {
+        this.haocaiAmount = haocaiAmount;
     }
 
     public String getHaocaiUnit() {

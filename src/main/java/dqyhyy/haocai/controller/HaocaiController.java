@@ -28,7 +28,7 @@
 //     */
 //    @PostMapping(value="/haocai")
 //    public Haocai haocaiAdd(Haocai haocai){
-//        haocai.setAmount(haocai.getAmount());
+//        haocai.setHaocaiAmount(haocai.getHaocaiAmount());
 //        haocai.setHaocaiExpirationDate(haocai.getHaocaiExpirationDate());
 //        haocai.setHaocaiName(haocai.getHaocaiName());
 //        haocai.setHaocaiPurchaseDate(haocai.getHaocaiPurchaseDate());
@@ -60,7 +60,7 @@
 //                               @RequestParam("amount") Integer amount){
 //        Haocai haocai = new Haocai();
 //        haocai.setHaocaiId(id);
-//        haocai.setAmount(amount);
+//        haocai.setHaocaiAmount(amount);
 //
 //        return haocaiRepository.save(haocai);
 //    }
