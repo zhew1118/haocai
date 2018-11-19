@@ -89,6 +89,40 @@
                             </tbody>
                         </table>
                     </div>
+
+                    <#--分页-->
+                    <div class="col-md-12 column">
+                        <ul class="pagination pull-right">
+                            <#if currentPage lte 1>
+                                <li class="disabled">
+                                    <a href="#">上一页</a>
+                                </li>
+                            <#else>
+                                <li>
+                                    <a href="/admin/list?page=${currentPage-1}&size=${size}">上一页</a>
+                                </li>
+                            </#if>
+
+                            <#list 1..haocaiPage.getTotalPages() as index>
+                                <#if currentPage == index>
+                                    <li class="disabled"><a href="/admin/list?page=${index}&size=${size}">${index}</a></li>
+                                <#else>
+                                    <li>
+                                        <a href="/admin/list?page=${index}&size=${size}">${index}</a>
+                                    </li>
+                                </#if>
+                            </#list>
+                            <#if currentPage gte haocaiPage.getTotalPages()>
+                                <li class="disabled">
+                                    <a href="#">下一页</a>
+                                </li>
+                            <#else>
+                                <li class="disabled">
+                                    <a href="/admin/list?page=${currentPage+1}&size=${size}">下一页</a>
+                                </li>
+                            </#if>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
