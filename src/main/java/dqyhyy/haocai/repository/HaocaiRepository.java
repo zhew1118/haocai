@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface HaocaiRepository extends JpaRepository<Haocai, Integer> {
+public interface HaocaiRepository extends JpaRepository<Haocai, String> {
     List<Haocai> findByHaocaiStatus(Integer haocaiStatus);
 }

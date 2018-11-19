@@ -9,7 +9,7 @@ import javax.persistence.Id;
 public class Haocai {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer haocaiId;
+    private String haocaiId;
 
     /** 耗材名称 */
     private String haocaiName;
@@ -41,11 +41,11 @@ public class Haocai {
     public Haocai() {
     }
 
-    public Integer getHaocaiId() {
+    public String getHaocaiId() {
         return haocaiId;
     }
 
-    public void setHaocaiId(Integer haocaiId) {
+    public void setHaocaiId(String haocaiId) {
         this.haocaiId = haocaiId;
     }
 

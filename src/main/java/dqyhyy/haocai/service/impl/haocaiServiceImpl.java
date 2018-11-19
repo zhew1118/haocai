@@ -24,8 +24,8 @@ public class haocaiServiceImpl implements HaocaiService {
      * @return
      */
     @Override
-    public Haocai findOne(Integer haocaiId) {
-        return haocaiRepository.findById(haocaiId).get();
+    public Haocai findOne(String haocaiId) {
+        return haocaiRepository.getOne(haocaiId);
     }
 
     /**

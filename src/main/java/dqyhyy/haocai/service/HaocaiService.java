@@ -12,7 +12,7 @@ public interface HaocaiService {
      * @param haocaiId
      * @return
      */
-    Haocai findOne(Integer haocaiId);
+    Haocai findOne(String haocaiId);
 
 
     /**
