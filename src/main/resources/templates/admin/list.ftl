@@ -13,7 +13,7 @@
 
         <#--主要内容-->
         <div id="page-content-wrapper">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row clearfix">
                     <div class="col-md-12 column">
                         <table class="table table-bordered table-hover table-condensed">
