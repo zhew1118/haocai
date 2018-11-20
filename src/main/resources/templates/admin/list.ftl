@@ -49,6 +49,7 @@
                                 <th>
                                     上架
                                 </th>
+                                <th colspan="2">操作</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -83,6 +84,16 @@
                         </td>
                         <td>
                             ${haocai.haocaiStatus}
+                        </td>
+                        <td>
+                            <a href="index?haocaiId=${haocai.haocaiId}">修改</a>
+                        </td>
+                        <td>
+                            <#if haocai.getHaocaiStatusEnum().message == "在架">
+                                <a href="off_sale?haocaiId=${haocai.haocaiId}">下架</a>
+                            <#else>
+                                <a href="on_sale?haocaiId=${haocai.haocaiId}">在架</a>
+                            </#if>
                         </td>
                     </tr>
                     </#list>
