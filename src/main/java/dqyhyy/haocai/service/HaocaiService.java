@@ -37,6 +37,19 @@ public interface HaocaiService {
      */
     Haocai save(Haocai haocai);
 
+    /**
+     * 耗材上架
+     * @param haocaiId
+     * @return
+     */
+    Haocai onSale(String haocaiId);
 
+
+    /**
+     * 耗材下架
+     * @param haocaiId
+     * @return
+     */
+    Haocai offSale(String haocaiId);
 
 }

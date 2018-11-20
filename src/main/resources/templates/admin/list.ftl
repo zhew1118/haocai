@@ -92,7 +92,7 @@
                             <#if haocai.getHaocaiStatusEnum().message == "在架">
                                 <a href="off_sale?haocaiId=${haocai.haocaiId}">下架</a>
                             <#else>
-                                <a href="on_sale?haocaiId=${haocai.haocaiId}">在架</a>
+                                <a href="on_sale?haocaiId=${haocai.haocaiId}">上架</a>
                             </#if>
                         </td>
                     </tr>
