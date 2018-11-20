@@ -1,7 +1,7 @@
 package dqyhyy.haocai.enums;
 
-public enum HaocaiStatusEnum {
-    UP(1, "上架"),
+public enum HaocaiStatusEnum implements CodeEnum{
+    UP(1, "在架"),
     DOWN(0, "下架")
     ;
 

@@ -1,5 +1,9 @@
 package dqyhyy.haocai.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import dqyhyy.haocai.enums.HaocaiStatusEnum;
+import dqyhyy.haocai.utils.EnumUtil;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -119,5 +123,10 @@ public class Haocai {
 
     public void setHaocaiStatus(Integer haocaiStatus) {
         this.haocaiStatus = haocaiStatus;
+    }
+
+    @JsonIgnore
+    public HaocaiStatusEnum getHaocaiStatusEnum(){
+        return EnumUtil.getByCode(haocaiStatus, HaocaiStatusEnum.class);
     }
 }
