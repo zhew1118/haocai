@@ -1,5 +1,8 @@
 package dqyhyy.haocai.form;
 
+import lombok.Data;
+
+@Data
 public class HaocaiForm {
 
     private String haocaiId;
