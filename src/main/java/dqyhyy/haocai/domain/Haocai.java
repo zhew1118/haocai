@@ -3,16 +3,20 @@ package dqyhyy.haocai.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dqyhyy.haocai.enums.HaocaiStatusEnum;
 import dqyhyy.haocai.utils.EnumUtil;
+import lombok.Data;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
-public class Haocai {
+@Data
+@DynamicUpdate
+public class Haocai implements Serializable {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
     private String haocaiId;
 
     /** 耗材名称 */
@@ -40,90 +44,7 @@ public class Haocai {
     private String haocaiUnit;
 
     /** 耗材状态 0正常 1下架 */
-    private Integer haocaiStatus;
-
-    public Haocai() {
-    }
-
-    public String getHaocaiId() {
-        return haocaiId;
-    }
-
-    public void setHaocaiId(String haocaiId) {
-        this.haocaiId = haocaiId;
-    }
-
-    public String getHaocaiName() {
-        return haocaiName;
-    }
-
-    public void setHaocaiName(String haocaiName) {
-        this.haocaiName = haocaiName;
-    }
-
-    public String getHaocaiPurchaseDate() {
-        return haocaiPurchaseDate;
-    }
-
-    public void setHaocaiPurchaseDate(String haocaiPurchaseDate) {
-        this.haocaiPurchaseDate = haocaiPurchaseDate;
-    }
-
-    public String getHaocaiExpirationDate() {
-        return haocaiExpirationDate;
-    }
-
-    public void setHaocaiExpirationDate(String haocaiExpirationDate) {
-        this.haocaiExpirationDate = haocaiExpirationDate;
-    }
-
-    public String getHaocaiSpec() {
-        return haocaiSpec;
-    }
-
-    public void setHaocaiSpec(String haocaiSpec) {
-        this.haocaiSpec = haocaiSpec;
-    }
-
-    public String getHaocaiVendor() {
-        return haocaiVendor;
-    }
-
-    public void setHaocaiVendor(String haocaiVendor) {
-        this.haocaiVendor = haocaiVendor;
-    }
-
-    public String getHaocaiType() {
-        return haocaiType;
-    }
-
-    public void setHaocaiType(String haocaiType) {
-        this.haocaiType = haocaiType;
-    }
-
-    public int getHaocaiAmount() {
-        return haocaiAmount;
-    }
-
-    public void setHaocaiAmount(int haocaiAmount) {
-        this.haocaiAmount = haocaiAmount;
-    }
-
-    public String getHaocaiUnit() {
-        return haocaiUnit;
-    }
-
-    public void setHaocaiUnit(String haocaiUnit) {
-        this.haocaiUnit = haocaiUnit;
-    }
-
-    public Integer getHaocaiStatus() {
-        return haocaiStatus;
-    }
-
-    public void setHaocaiStatus(Integer haocaiStatus) {
-        this.haocaiStatus = haocaiStatus;
-    }
+    private Integer haocaiStatus = HaocaiStatusEnum.UP.getCode();;
 
     @JsonIgnore
     public HaocaiStatusEnum getHaocaiStatusEnum(){
