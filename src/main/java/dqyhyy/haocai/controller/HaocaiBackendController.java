@@ -4,6 +4,7 @@ import dqyhyy.haocai.domain.Haocai;
 import dqyhyy.haocai.exception.HaocaiException;
 import dqyhyy.haocai.form.HaocaiForm;
 import dqyhyy.haocai.service.HaocaiService;
+import dqyhyy.haocai.utils.KeyUtil;
 import freemarker.template.utility.StringUtil;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,21 +82,34 @@ public class HaocaiBackendController {
         return new ModelAndView("common/success", map);
     }
 
-//    @PostMapping("/save")
-//    public ModelAndView save(@Valid HaocaiForm form,
-//                             BindingResult bindingResult,
-//                             Map<String, Object> map) {
-//        if(bindingResult.hasErrors()) {
-//            map.put("message", bindingResult.getFieldError().getDefaultMessage());
-//            map.put("url", "admin/index");
-//            return new ModelAndView("common/error", map);
-//        }
-//
-//        Haocai haocai = new Haocai();
-//        BeanUtils.copyProperties(form, haocai);
-//
-//        try {
-//            haocaiService.save(haocai);
-//        } catch ()
-//    }
+    @PostMapping("/save")
+    public ModelAndView save(@Valid HaocaiForm form,
+                             BindingResult bindingResult,
+                             Map<String, Object> map) {
+        if(bindingResult.hasErrors()) {
+            map.put("msg", bindingResult.getFieldError().getDefaultMessage());
+            map.put("url", "index");
+            return new ModelAndView("common/error", map);
+        }
+
+        Haocai haocai = new Haocai();
+        try {
+            //如果haocaiId非空， 为更改
+            if(!StringUtils.isEmpty(form.getHaocaiId())){
+                haocai = haocaiService.findOne(form.getHaocaiId());
+            } else {
+                //haocaiId为空， 生成id
+                form.setHaocaiId(KeyUtil.genUniqueKey());
+            }
+            BeanUtils.copyProperties(form, haocai);
+            haocaiService.save(haocai);
+        } catch (HaocaiException e) {
+            map.put("msg", e.getMessage());
+            map.put("url", "index");
+            return new ModelAndView("common/error", map);
+        }
+
+        map.put("url", "list");
+        return new ModelAndView("common/success", map);
+    }
 }
